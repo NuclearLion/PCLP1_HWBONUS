@@ -1,0 +1,12 @@
+// Copyright 2023 311CA Dan-Dominic Staicu <dando.ds11@gmail.com>
+Bonus homework given by Bitdefender
+
+VERSION CONTROL: 
+
+commit 1: Initial commit
+	*added README and main
+
+commit 2: Link detection
+	*first implementation of Link detection
+	*can detect links which have a domain from the database
+	*can detect executable files

@@ -1,0 +1,9 @@
+*.zip
+checker
+check_utils
+data
+tasks
+check
+install.sh
+.check.grade
+my_av
