@@ -8,3 +8,5 @@ install.sh
 .check.grade
 my_av
 README.md
+urls-predictions.out
+traffic-predictions.out

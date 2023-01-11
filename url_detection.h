@@ -16,9 +16,11 @@
 #define TRUE 1
 
 //read the domain db and save it in a matrix
-void read_domain_db(char domains[][DOM_LEN]);
+int read_domain_db(char domains[][DOM_LEN]);
 
 //main call for task1 - Malware Links Detection
 void url_detect(void);
+
+void print_predict(int malw, FILE *output);
 
 #endif

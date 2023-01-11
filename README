@@ -14,3 +14,7 @@ commit 2: Link detection
 commit 3: Url detect minimal working
 	*F1=0.675
 	*if more than 10% of domain name is digits, than it's malware
+
+commit 4: Memory alloc defensive
+	*added defensive programming at FILE loading
+	*created files for traffic detection

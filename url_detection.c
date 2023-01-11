@@ -1,9 +1,14 @@
 // Copyright 2023 311CA Dan-Dominic Staicu <dando.ds11@gmail.com>
 #include "url_detection.h"
 
-void read_domain_db(char domains[][DOM_LEN])
+int read_domain_db(char domains[][DOM_LEN])
 {
 	FILE *domains_db = fopen("data/urls/domains_database", "rt");
+
+	if (!domains_db) {
+		fprintf(stderr, "Could not open domains db file\n");
+		return FALSE;
+	}
 
 	int index_read_db = 0;
 	fscanf(domains_db, "%s", domains[index_read_db]);
@@ -13,15 +18,37 @@ void read_domain_db(char domains[][DOM_LEN])
 	}
 
 	fclose(domains_db);
+	return TRUE;
+}
+
+void print_predict(int malw, FILE *output)
+{
+	if (!malw)
+			fprintf(output, "%d\n", BEN);
+		else
+			fprintf(output, "%d\n", MAL);
 }
 
 void url_detect(void)
 {
 	char domains[DOMDB_CNT][DOM_LEN];
-	read_domain_db(domains);
+	if (!read_domain_db(domains)) {
+		fprintf(stderr, "Domains could not be read\n");
+		return;
+	}
 
 	FILE *input = fopen("data/urls/urls.in", "rt");
+	if (!input) {
+		fprintf(stderr, "Could not open input in url detect\n");
+		return;
+	}
+
 	FILE *output = fopen("urls-predictions.out", "wt");
+	if (!output) {
+		fprintf(stderr, "Could not open the open file in url detect\n");
+		fclose(input);
+		return;
+	}
 
 	char url[URL_LEN];
 	char separator[] = "/ ";
@@ -75,10 +102,7 @@ void url_detect(void)
 			dom_ptr = aux;
 		}
 
-		if (!malw)
-			fprintf(output, "%d\n", BEN);
-		else
-			fprintf(output, "%d\n", MAL);
+		print_predict(malw, output);
 
 		fscanf(input, "%s", url);
 	}
