@@ -10,3 +10,7 @@ commit 2: Link detection
 	*first implementation of Link detection
 	*can detect links which have a domain from the database
 	*can detect executable files
+
+commit 3: Url detect minimal working
+	*F1=0.675
+	*if more than 10% of domain name is digits, than it's malware

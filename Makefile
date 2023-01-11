@@ -4,7 +4,7 @@ CC=gcc
 CFLAGS=-Wall -Wextra -std=c99 -lm
 FILES=$(wildcard *.c)
 
-all: build
+all: clean build run
 
 build: my_av
 
