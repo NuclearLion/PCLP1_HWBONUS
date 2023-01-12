@@ -1,5 +1,6 @@
 {
 	"files.associations": {
-		"url_detection.h": "c"
+		"url_detection.h": "c",
+		"traffic_detection.h": "c"
 	}
 }

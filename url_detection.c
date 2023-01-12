@@ -21,14 +21,6 @@ int read_domain_db(char domains[][DOM_LEN])
 	return TRUE;
 }
 
-void print_predict(int malw, FILE *output)
-{
-	if (!malw)
-			fprintf(output, "%d\n", BEN);
-		else
-			fprintf(output, "%d\n", MAL);
-}
-
 void url_detect(void)
 {
 	char domains[DOMDB_CNT][DOM_LEN];

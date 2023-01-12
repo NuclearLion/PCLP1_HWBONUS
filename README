@@ -18,3 +18,7 @@ commit 3: Url detect minimal working
 commit 4: Memory alloc defensive
 	*added defensive programming at FILE loading
 	*created files for traffic detection
+
+commit 5: flow_duration v1
+	*added utils header for common funcs
+	*v1 of traffic detection, only with flow_duration

@@ -2,13 +2,11 @@
 #ifndef _TRAFFIC_DETECTION_H_
 #define _TRAFFIC_DETECTION_H_
 
-#include <stdio.h>
-#include <string.h>
+#include "utils.h"
 
-#define BEN 0
-#define MAL 1
-#define FALSE 0
-#define TRUE 1
+#define HEADER_LEN 280
+#define TRAFFIC_LEN 160
+#define ZERO_SECONDS "0 days 00:00:00"
 
 void traffic_detect(void);
 
