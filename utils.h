@@ -10,6 +10,7 @@
 #define FALSE 0
 #define TRUE 10
 
+// print the output in file
 void print_predict(int malw, FILE *output);
 
 #endif

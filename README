@@ -1,6 +1,11 @@
 // Copyright 2023 311CA Dan-Dominic Staicu <dando.ds11@gmail.com>
 Bonus homework given by Bitdefender
 
+My_av
+
+
+
+
 VERSION CONTROL: 
 
 commit 1: Initial commit
@@ -22,3 +27,7 @@ commit 4: Memory alloc defensive
 commit 5: flow_duration v1
 	*added utils header for common funcs
 	*v1 of traffic detection, only with flow_duration
+
+commit 6: 100/100 in C
+	*fwd_pkts compared to flow_pkts to detect cryptominer
+	*added comments
