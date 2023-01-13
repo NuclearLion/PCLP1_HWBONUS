@@ -3,7 +3,29 @@ Bonus homework given by Bitdefender
 
 My_av
 
+Task 1
+	For this task, the program first reads the database and saves it inside
+a matrix; if that was succesfull, the next step is opening the input and output
+files, as we need to read and write simultaneously; it creates a char matrix
+with known malicious extensions; 
+	When it starts reading urls, it checks if the domain contains more than 10%
+digits; these links clould be ips or just suspicious;
+	If it passed the first test, we check if the domain is found in the db;
+	If the second test is passed as well, we check if it contains an malicious
+extension at the end;
+	It writes the results in the output file after each URL_LEN
+	In the end closes the files
 
+Task 2:
+	For this task, the program fisrlt opens the input and output files, as
+it will need them simultaneously;
+	After stepping over the header, it starts reading every line as a single
+char string; it separates the char strings, using commas (,) as sepparators;
+	If the 4th column doesn't include the "0 days 00:00:00" string, it means
+it takes longer than 1 second;
+	If the last column (flow_pkts_payload.avg) is different than 0, it checks
+if fwd_pkts_payload.avg is equal to this column; if they are equal, it's a
+cryptominer;
 
 
 VERSION CONTROL: 
@@ -30,4 +52,7 @@ commit 5: flow_duration v1
 
 commit 6: 100/100 in C
 	*fwd_pkts compared to flow_pkts to detect cryptominer
-	*added comments
+	*added 
+	
+commit 7: README
+	*written README
