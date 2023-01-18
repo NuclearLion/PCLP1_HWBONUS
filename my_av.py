@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 #Copyright 2023 311CA Dan-Dominic Staicu <dando.ds11@gmail.com>
 
+import re
+
 domains_db = open("data/urls/domains_database", "rt")
 
 domains = []
@@ -38,7 +40,7 @@ while True:
 	if not url:
 		break
 	#print(url.strip())
-	malw = False;
+	malw = False
 
 	dom_ptr = url.split(separator)
 	len_dom = len(dom_ptr)
@@ -70,12 +72,44 @@ while True:
 input_f.close()
 output_f.close()
 
-input_f = open("data/traffic/traffic.in", "rt")
-output_f = open("traffic-predictions.out", "wt")
+input_f1 = open("data/traffic/traffic.in", "rt")
+output_f1 = open("traffic-predictions.out", "wt")
 
-header = input_f.readline()
+traffic = input_f1.readline()
 
 while True:
-	traffic = input_f.readline()
+	traffic = input_f1.readline()
 	if not traffic:
 		break
+	mal = False
+	#sep = ",\n"
+
+	category = re.split("[,\n]", traffic)
+	#print(category)
+
+	if "0 days 00:00:00" in category[4]:
+		mal = True
+
+	# fwd_pkts_payload_avg = float(category[12])
+	# flow_pkts_payload_avg = float(category[16])
+	# if flow_pkts_payload_avg != 0:
+	# 	if 
+
+
+	#print(fwd_pkts_payload_avg)
+	# if not mal:
+	# fwd_pkts_payload_avg = float(category[12])
+	# flow_pkts_payload_avg = float(category[16])
+	# print("flow:", flow_pkts_payload_avg)
+	# print("fwd:", fwd_pkts_payload_avg)
+	# if flow_pkts_payload_avg != 0:
+	# 	if flow_pkts_payload_avg == fwd_pkts_payload_avg:# < 0.000001:
+	# 		mal = True
+			
+	if not mal:
+		output_f1.write("1\n")
+	else:
+		output_f1.write("0\n")
+
+input_f1.close()
+output_f1.close()
