@@ -29,6 +29,7 @@ void traffic_detect(void)
 		int pos = 0; //position
 		char sep[] = ",";
 
+		int fwd_pkts_payload_avg;
 		//separate the categories inside the .in file
 		char *category = strtok(traffic, sep);
 		while (category) {
@@ -38,7 +39,6 @@ void traffic_detect(void)
 					mal = TRUE;
 
 			//if it's on the fwd_pkts_payload.avg column
-			int fwd_pkts_payload_avg;
 			if (pos == 12)
 				fwd_pkts_payload_avg = atoi(category);
 
